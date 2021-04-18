@@ -1,0 +1,19 @@
+import pyperclip
+
+text=pyperclip.paste()
+print(text)           #---> copied lines in clipboard is print
+
+print("***********************************")
+
+
+split=input('Where you want to split')
+line=text.split(split)
+print('Length of list',len(line))
+#print(line) #---> splitted lines in a list
+
+for i in range(len(line)):
+    line[i]='* '+line[i] # we are saving '* + statement' in a list and joined '\n'.join(line)
+    
+tex='\n'.join(line)
+
+pyperclip.copy(tex)
